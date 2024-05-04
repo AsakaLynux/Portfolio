@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:portfolio2/design/widget/button_widget.dart';
 import 'package:portfolio2/shared/theme.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class MobileHomePage extends StatelessWidget {
+  const MobileHomePage({super.key});
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.sizeOf(context).width;

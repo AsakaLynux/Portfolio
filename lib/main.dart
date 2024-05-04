@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import '../design/interface/home_page.dart';
+import 'package:portfolio2/design/devices/mobile/home_page.dart';
+import 'design/devices/desktop/home_page.dart';
+import './responsive_layout.dart';
 import '../../shared/theme.dart';
 
 void main() {
@@ -25,10 +27,9 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: Stack(
           children: [
-            const Column(
-              children: [
-                HomePage(),
-              ],
+            const ResponsiveLayout(
+              desktopBody: DesktopHomePage(),
+              mobileBody: MobileHomePage(),
             ),
             Align(
               alignment: Alignment.topRight,
