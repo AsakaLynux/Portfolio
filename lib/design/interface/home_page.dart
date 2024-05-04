@@ -19,22 +19,23 @@ class HomePage extends StatelessWidget {
                 width: width / 2,
                 height: height,
                 margin: EdgeInsets.zero,
-                decoration: BoxDecoration(
-                  color: backgroudnColor,
+                decoration: const BoxDecoration(
+                  color: Colors.black,
                 ),
               ),
               Container(
                 width: width / 2,
                 height: height,
                 margin: EdgeInsets.zero,
-                decoration: const BoxDecoration(
-                  color: Colors.black,
-                ),
-                child: Icon(
-                  Icons.person,
-                  size: width / 2,
-                  color: whiteColor,
-                ),
+                decoration: BoxDecoration(
+                    color: backgroundColor,
+                    image:
+                        const DecorationImage(image: AssetImage("profil.png"))),
+                // child: Icon(
+                //   Icons.person,
+                //   size: width / 2,
+                //   color: whiteColor,
+                // ),
               ),
             ],
           ),

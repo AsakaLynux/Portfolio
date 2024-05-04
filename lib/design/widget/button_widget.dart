@@ -23,10 +23,12 @@ class ButtonWidget extends StatelessWidget {
       width: width,
       decoration: BoxDecoration(
         border: Border.all(),
+        borderRadius: BorderRadius.circular(10),
+        color: blueColor,
       ),
       child: TextButton(
         onPressed: onPressed,
-        style: TextButton.styleFrom(),
+        style: TextButton.styleFrom(shape: const LinearBorder()),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

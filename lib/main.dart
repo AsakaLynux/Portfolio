@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Portfolio',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: backgroudnColor),
+        colorScheme: ColorScheme.fromSeed(seedColor: backgroundColor),
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
