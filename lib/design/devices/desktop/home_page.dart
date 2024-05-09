@@ -39,59 +39,85 @@ class DesktopHomePage extends StatelessWidget {
               ),
             ],
           ),
-          LayoutBuilder(
-            builder: (context, constraints) {
-              return Align(
-                alignment: Alignment.centerLeft,
-                child: Stack(
-                  children: [
-                    Container(
-                      // margin: const EdgeInsets.only(
-                      //   left: 118,
-                      //   top: 175,
-                      //   right: 588,
-                      //   bottom: 140,
-                      // ),
-                      width: constraints.maxWidth * 0.8,
-                      height: constraints.maxHeight * 0.8,
-                      decoration: BoxDecoration(
-                        border: Border.all(),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Stack(
+              children: [
+                Container(
+                  // margin: const EdgeInsets.only(
+                  //   left: 118,
+                  //   top: 175,
+                  //   right: 588,
+                  //   bottom: 140,
+                  // ),
+
+                  decoration: BoxDecoration(
+                    border: Border.all(),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Hello!\nI'm Muhammad Irfansyah",
+                        style: primaryTextStyleDmSans.copyWith(
+                          fontWeight: bold,
+                          fontSize: 90,
+                        ),
                       ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Hello!\nI'm Muhammad Irfansyah",
-                            style: primaryTextStyleDmSans.copyWith(
-                              fontSize:
-                                  (constraints.maxWidth * 0.05).clamp(30, 90),
-                              fontWeight: bold,
-                            ),
+                      SizedBox(
+                        width: 404,
+                        child: Text(
+                          "I’am freelance mobile developer based in Indonesia who loves to craft attractive design experiences for the mobile.",
+                          style: primaryTextStyleDmSans.copyWith(
+                            fontSize: 20,
                           ),
-                          Text(
-                            "I’am freelance mobile developer based in Indonesia who loves to craft attractive design experiences for the mobile.",
-                            style: primaryTextStyleDmSans.copyWith(
-                              fontSize:
-                                  (constraints.maxWidth * 0.05).clamp(1, 20),
-                            ),
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          ButtonWidget(
+                            width: 200,
+                            color: blueColor,
+                            onPressed: () {},
+                            contain: [
+                              Image.asset(
+                                "email.png",
+                                height: 20,
+                                width: 20,
+                              ),
+                              Text(
+                                "Email me",
+                                style: primaryTextStyleDmSans.copyWith(
+                                    fontSize: 20),
+                              )
+                            ],
                           ),
                           ButtonWidget(
                             width: 200,
+                            radius: 10,
                             onPressed: () {},
-                          ),
+                            contain: [
+                              Image.asset(
+                                "download.png",
+                                height: 20,
+                                width: 20,
+                              ),
+                              Text(
+                                "Download CV",
+                                style: primaryTextStyleDmSans.copyWith(
+                                  decoration: TextDecoration.underline,
+                                  fontSize: 20,
+                                ),
+                              )
+                            ],
+                          )
                         ],
                       ),
-                    ),
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: Text(
-                        "${constraints.maxWidth} x ${constraints.maxHeight}",
-                      ),
-                    )
-                  ],
+                    ],
+                  ),
                 ),
-              );
-            },
+              ],
+            ),
           )
         ],
       ),

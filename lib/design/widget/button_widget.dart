@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
-import '../../shared/theme.dart';
 
 class ButtonWidget extends StatelessWidget {
   final EdgeInsets margin;
   final EdgeInsets padding;
   final double width;
+  final Color color;
   final Function() onPressed;
+  final double radius;
+  final List<Widget> contain;
 
   const ButtonWidget({
     super.key,
     required this.width,
     required this.onPressed,
+    required this.contain,
+    this.color = Colors.transparent,
     this.margin = EdgeInsets.zero,
     this.padding = EdgeInsets.zero,
+    this.radius = 0.0,
   });
 
   @override
@@ -23,25 +28,15 @@ class ButtonWidget extends StatelessWidget {
       width: width,
       decoration: BoxDecoration(
         border: Border.all(),
-        borderRadius: BorderRadius.circular(10),
-        color: blueColor,
+        borderRadius: BorderRadius.circular(radius),
+        color: color,
       ),
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(shape: const LinearBorder()),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Image.asset(
-              "email.png",
-              height: 20,
-              width: 20,
-            ),
-            Text(
-              "Email me",
-              style: primaryTextStyleDmSans.copyWith(fontSize: 20),
-            )
-          ],
+          children: contain,
         ),
       ),
     );
