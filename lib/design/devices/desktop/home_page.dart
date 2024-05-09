@@ -4,6 +4,7 @@ import 'package:portfolio2/shared/theme.dart';
 
 class DesktopHomePage extends StatelessWidget {
   const DesktopHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.sizeOf(context).width;
@@ -31,11 +32,11 @@ class DesktopHomePage extends StatelessWidget {
                     color: backgroundColor,
                     image:
                         const DecorationImage(image: AssetImage("profil.png"))),
-                // child: Icon(
-                //   Icons.person,
-                //   size: width / 2,
-                //   color: whiteColor,
-                // ),
+                child: Icon(
+                  Icons.person,
+                  size: width / 2,
+                  color: whiteColor,
+                ),
               ),
             ],
           ),
