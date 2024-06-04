@@ -32,11 +32,11 @@ class DesktopHomePage extends StatelessWidget {
                     color: backgroundColor,
                     image:
                         const DecorationImage(image: AssetImage("profil.png"))),
-                child: Icon(
-                  Icons.person,
-                  size: width / 2,
-                  color: whiteColor,
-                ),
+                // child: Icon(
+                //   Icons.person,
+                //   size: width / 2,
+                //   color: whiteColor,
+                // ),
               ),
             ],
           ),
