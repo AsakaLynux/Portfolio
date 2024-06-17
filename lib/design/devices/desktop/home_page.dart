@@ -20,18 +20,17 @@ class DesktopHomePage extends StatelessWidget {
                 width: width / 2,
                 height: height,
                 margin: EdgeInsets.zero,
-                decoration: const BoxDecoration(
-                  color: Colors.black,
+                decoration: BoxDecoration(
+                  color: backgroundColor,
                 ),
               ),
               Container(
                 width: width / 2,
                 height: height,
                 margin: EdgeInsets.zero,
-                decoration: BoxDecoration(
-                    color: backgroundColor,
-                    image:
-                        const DecorationImage(image: AssetImage("profil.png"))),
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("image.png"), fit: BoxFit.fill)),
                 // child: Icon(
                 //   Icons.person,
                 //   size: width / 2,
@@ -60,7 +59,7 @@ class DesktopHomePage extends StatelessWidget {
                     children: [
                       Text(
                         "Hello!\nI'm Muhammad Irfansyah",
-                        style: primaryTextStyleDmSans.copyWith(
+                        style: whiteTextStylePlayFairDisplay.copyWith(
                           fontWeight: bold,
                           fontSize: 90,
                         ),
@@ -69,7 +68,7 @@ class DesktopHomePage extends StatelessWidget {
                         width: 404,
                         child: Text(
                           "I’am freelance mobile developer based in Indonesia who loves to craft attractive design experiences for the mobile.",
-                          style: primaryTextStyleDmSans.copyWith(
+                          style: whiteTextStylePlayFairDisplay.copyWith(
                             fontSize: 20,
                           ),
                         ),
@@ -88,7 +87,7 @@ class DesktopHomePage extends StatelessWidget {
                               ),
                               Text(
                                 "Email me",
-                                style: primaryTextStyleDmSans.copyWith(
+                                style: whiteTextStylePlayFairDisplay.copyWith(
                                     fontSize: 20),
                               )
                             ],
@@ -105,7 +104,7 @@ class DesktopHomePage extends StatelessWidget {
                               ),
                               Text(
                                 "Download CV",
-                                style: primaryTextStyleDmSans.copyWith(
+                                style: whiteTextStylePlayFairDisplay.copyWith(
                                   decoration: TextDecoration.underline,
                                   fontSize: 20,
                                 ),

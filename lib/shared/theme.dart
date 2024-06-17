@@ -8,11 +8,19 @@ Color backgroundColor = const Color(0xff222A36);
 Color whiteColor = Colors.white;
 
 // Font
-TextStyle primaryTextStyleDmSans = GoogleFonts.dmSans(
+TextStyle whiteTextStylePlayFairDisplay = GoogleFonts.playfairDisplay(
   color: whiteColor,
 );
 
-TextStyle secondaryTextStyleDmSans = GoogleFonts.dmSans(
+TextStyle greyTextStylePlayFairDisplay = GoogleFonts.playfairDisplay(
+  color: greyColor,
+);
+
+TextStyle whiteTextStylePoppins = GoogleFonts.poppins(
+  color: whiteColor,
+);
+
+TextStyle greyTextStylePoppins = GoogleFonts.poppins(
   color: greyColor,
 );
 
