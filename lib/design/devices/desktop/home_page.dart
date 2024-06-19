@@ -21,85 +21,81 @@ class DesktopHomePage extends StatelessWidget {
             decoration: BoxDecoration(
               color: backgroundColor,
             ),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Hello!\nI’m Zarror Nibors",
-                    style: whiteTextStylePlayFairDisplay.copyWith(
-                      fontWeight: bold,
-                      fontSize: 90,
-                    ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Hello!\nI’m Zarror Nibors",
+                  style: whiteTextStylePlayFairDisplay.copyWith(
+                    fontWeight: bold,
+                    fontSize: 90,
                   ),
-                  SizedBox(
-                    width: 404,
-                    child: RichText(
-                      text: TextSpan(
-                        text: "I’am freelance ",
-                        style: greyTextStylePoppins.copyWith(fontSize: 20),
-                        children: [
-                          TextSpan(
-                            text: "web developer",
-                            style: whiteTextStylePoppins.copyWith(
-                              fontSize: 20,
-                              fontWeight: bold,
-                            ),
-                          ),
-                          TextSpan(
-                            text:
-                                " based in Indonesia who loves to craft attractive design experiences for the web.",
-                            style: greyTextStylePoppins.copyWith(fontSize: 20),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Container(
-                    child: Row(
+                ),
+                SizedBox(
+                  width: 404,
+                  child: RichText(
+                    text: TextSpan(
+                      text: "I’am freelance ",
+                      style: greyTextStylePoppins.copyWith(fontSize: 20),
                       children: [
-                        ButtonWidget(
-                          width: 200,
-                          color: blueColor,
-                          onPressed: () {},
-                          contain: [
-                            Image.asset(
-                              "email.png",
-                              height: 20,
-                              width: 20,
-                            ),
-                            Text(
-                              "Email me",
-                              style: whiteTextStylePlayFairDisplay.copyWith(
-                                  fontSize: 20),
-                            )
-                          ],
+                        TextSpan(
+                          text: "web developer",
+                          style: whiteTextStylePoppins.copyWith(
+                            fontSize: 20,
+                            fontWeight: bold,
+                          ),
                         ),
-                        ButtonWidget(
-                          width: 200,
-                          radius: 10,
-                          onPressed: () {},
-                          contain: [
-                            Image.asset(
-                              "download.png",
-                              height: 20,
-                              width: 20,
-                            ),
-                            Text(
-                              "Download CV",
-                              style: whiteTextStylePlayFairDisplay.copyWith(
-                                decoration: TextDecoration.underline,
-                                fontSize: 20,
-                              ),
-                            )
-                          ],
-                        )
+                        TextSpan(
+                          text:
+                              " based in Indonesia who loves to craft attractive design experiences for the web.",
+                          style: greyTextStylePoppins.copyWith(fontSize: 20),
+                        ),
                       ],
                     ),
                   ),
-                ],
-              ),
+                ),
+                Row(
+                  children: [
+                    ButtonWidget(
+                      width: 200,
+                      color: blueColor,
+                      onPressed: () {},
+                      contain: [
+                        Image.asset(
+                          "email.png",
+                          height: 20,
+                          width: 20,
+                        ),
+                        Text(
+                          "Email me",
+                          style: whiteTextStylePlayFairDisplay.copyWith(
+                              fontSize: 20),
+                        )
+                      ],
+                    ),
+                    ButtonWidget(
+                      width: 200,
+                      radius: 10,
+                      onPressed: () {},
+                      contain: [
+                        Image.asset(
+                          "download.png",
+                          height: 20,
+                          width: 20,
+                        ),
+                        Text(
+                          "Download CV",
+                          style: whiteTextStylePlayFairDisplay.copyWith(
+                            decoration: TextDecoration.underline,
+                            fontSize: 20,
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ],
             ),
           ),
           Container(
