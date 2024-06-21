@@ -3,15 +3,17 @@ import 'package:portfolio2/design/widget/button_widget.dart';
 import 'package:portfolio2/shared/theme.dart';
 
 class DesktopHomePage extends StatelessWidget {
-  const DesktopHomePage({super.key});
+  final double height;
+  final double width;
+  const DesktopHomePage({super.key, required this.height, required this.width});
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.sizeOf(context).width;
-    var height = MediaQuery.sizeOf(context).height;
-    return SizedBox(
+    return Container(
       width: width,
       height: height,
+      margin: EdgeInsets.zero,
+      padding: EdgeInsets.zero,
       child: Row(
         children: [
           Container(

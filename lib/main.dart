@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio2/design/devices/desktop/desktop.dart';
 import 'package:portfolio2/design/devices/mobile/home_page.dart';
-import 'design/devices/desktop/home_page.dart';
 import './responsive_layout.dart';
 import '../../shared/theme.dart';
 
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         body: Stack(
           children: [
             const ResponsiveLayout(
-              desktopBody: DesktopHomePage(),
+              desktopBody: DesktopPage(),
               mobileBody: MobileHomePage(),
             ),
             Align(
