@@ -9,7 +9,8 @@ class DesktopPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var width = MediaQuery.sizeOf(context).width;
     var height = MediaQuery.sizeOf(context).height;
-    return Column(
+    return ListView(
+      physics: const BouncingScrollPhysics(),
       children: [
         DesktopHomePage(width: width, height: height),
         DesktopLogoPage(width: width, height: height)
