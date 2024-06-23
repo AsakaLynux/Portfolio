@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio2/shared/theme.dart';
 
 class DesktopLogoPage extends StatelessWidget {
   final double height;
@@ -12,7 +11,7 @@ class DesktopLogoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> SkillIcon = [
+    List<String> skillIcon = [
       "figma.png",
       "react.png",
       "sass.png",
@@ -30,7 +29,7 @@ class DesktopLogoPage extends StatelessWidget {
       child: Center(
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: SkillIcon.length,
+          itemCount: skillIcon.length,
           shrinkWrap: true,
           itemBuilder: (context, index) {
             return Container(
@@ -38,7 +37,7 @@ class DesktopLogoPage extends StatelessWidget {
               height: 100,
               margin: const EdgeInsets.only(left: 100, right: 100),
               decoration: BoxDecoration(
-                  image: DecorationImage(image: AssetImage(SkillIcon[index]))),
+                  image: DecorationImage(image: AssetImage(skillIcon[index]))),
             );
           },
         ),

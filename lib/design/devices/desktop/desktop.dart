@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio2/design/devices/desktop/experienced_page.dart';
 import 'package:portfolio2/design/devices/desktop/home_page.dart';
 import 'package:portfolio2/design/devices/desktop/logo_page.dart';
 
@@ -13,7 +14,8 @@ class DesktopPage extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       children: [
         DesktopHomePage(width: width, height: height),
-        DesktopLogoPage(width: width, height: height)
+        DesktopLogoPage(width: width, height: height),
+        DesktopExperiencedPage(width: width, height: height),
       ],
     );
   }
