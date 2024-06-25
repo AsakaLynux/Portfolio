@@ -29,9 +29,7 @@ TextStyle greyTextStylePoppins = GoogleFonts.poppins(
   color: greyColor,
 );
 
-TextStyle blackTextStylePoppins = GoogleFonts.poppins(
-  color: Colors.black,
-);
+TextStyle textStylePoppins = GoogleFonts.poppins();
 
 // FontWeight
 FontWeight regular = FontWeight.w400;
