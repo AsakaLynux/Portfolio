@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio2/design/widget/button_widget.dart';
 import 'package:portfolio2/shared/theme.dart';
@@ -70,7 +71,11 @@ class DesktopHomePage extends StatelessWidget {
                         ButtonWidget(
                           width: 200,
                           color: blueColor,
-                          onPressed: () {},
+                          onPressed: () {
+                            if (kDebugMode) {
+                              print("Pressed");
+                            }
+                          },
                           contain: [
                             Image.asset(
                               "email.png",
@@ -87,7 +92,11 @@ class DesktopHomePage extends StatelessWidget {
                         ButtonWidget(
                           width: 200,
                           radius: 10,
-                          onPressed: () {},
+                          onPressed: () {
+                            if (kDebugMode) {
+                              print("Pressed");
+                            }
+                          },
                           contain: [
                             Image.asset(
                               "download.png",
