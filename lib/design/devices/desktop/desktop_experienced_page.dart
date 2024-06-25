@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio2/shared/theme.dart';
 
-class DesktopExperiencedPage extends StatelessWidget {
+class DesktopExperiencedPage extends StatefulWidget {
   final double height;
   final double width;
   const DesktopExperiencedPage({
@@ -11,46 +11,54 @@ class DesktopExperiencedPage extends StatelessWidget {
   });
 
   @override
+  State<DesktopExperiencedPage> createState() => _DesktopExperiencedPageState();
+}
+
+class _DesktopExperiencedPageState extends State<DesktopExperiencedPage> {
+  @override
   Widget build(BuildContext context) {
     Widget card(Color backgroundColor, String text, String image, Color color) {
-      return Container(
-        width: 288,
-        height: 295,
-        margin: const EdgeInsets.only(left: 15, right: 15),
-        padding: const EdgeInsets.only(bottom: 35, left: 30),
-        decoration: BoxDecoration(
-          color: backgroundColor,
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              width: 50,
-              height: 50,
-              child: Image.asset(
-                image,
-                color: color,
+      return GestureDetector(
+        onTap: () {},
+        child: Container(
+          width: 288,
+          height: 295,
+          margin: const EdgeInsets.only(left: 15, right: 15),
+          padding: const EdgeInsets.only(bottom: 35, left: 30),
+          decoration: BoxDecoration(
+            color: backgroundColor,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: 50,
+                height: 50,
+                child: Image.asset(
+                  image,
+                  color: color,
+                ),
               ),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              text,
-              style: textStylePoppins.copyWith(
-                fontSize: 20,
-                fontWeight: bold,
-                color: color,
+              const SizedBox(height: 10),
+              Text(
+                text,
+                style: textStylePoppins.copyWith(
+                  fontSize: 20,
+                  fontWeight: bold,
+                  color: color,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       );
     }
 
     return Container(
-      width: width,
-      height: height / 2,
+      width: widget.width,
+      height: widget.height / 2,
       margin: EdgeInsets.zero,
       decoration: BoxDecoration(
         color: backgroundColor,
