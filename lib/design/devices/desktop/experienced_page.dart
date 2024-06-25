@@ -12,15 +12,15 @@ class DesktopExperiencedPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget card() {
+    Widget card(Color backgroundColor, String text, String image, Color color) {
       return Container(
         width: 288,
         height: 295,
         margin: const EdgeInsets.only(left: 15, right: 15),
         padding: const EdgeInsets.only(bottom: 35, left: 30),
         decoration: BoxDecoration(
-          color: greyColor,
-          border: Border.all(color: whiteColor),
+          color: backgroundColor,
+          borderRadius: BorderRadius.circular(20),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -30,16 +30,17 @@ class DesktopExperiencedPage extends StatelessWidget {
               width: 50,
               height: 50,
               child: Image.asset(
-                'computer.png',
-                color: Colors.black,
+                image,
+                color: color,
               ),
             ),
             const SizedBox(height: 10),
             Text(
-              "Front End Developer",
-              style: blackTextStylePoppins.copyWith(
+              text,
+              style: textStylePoppins.copyWith(
                 fontSize: 20,
                 fontWeight: bold,
+                color: color,
               ),
             ),
           ],
@@ -56,7 +57,6 @@ class DesktopExperiencedPage extends StatelessWidget {
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             width: 207,
@@ -83,23 +83,38 @@ class DesktopExperiencedPage extends StatelessWidget {
           ),
           Container(
             margin: EdgeInsets.zero,
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.white),
-            ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Developer and Designer, specialized in UI/UX and Web Developer",
+                  "Developer and Designer, specialized in\nUI/UX and Web Developer",
                   style: whiteTextStylePoppins.copyWith(
                     fontSize: 40,
                     fontWeight: bold,
                   ),
+                  textAlign: TextAlign.center,
                 ),
+                const SizedBox(height: 20),
                 Row(
                   children: [
-                    card(),
-                    card(),
-                    card(),
+                    card(
+                      purpleColor,
+                      "Front End Developer",
+                      "computer.png",
+                      whiteColor,
+                    ),
+                    card(
+                      greyColor,
+                      "UI/UX Designer",
+                      "paint.png",
+                      blackColor,
+                    ),
+                    card(
+                      greyColor,
+                      "Branding Designer",
+                      "thunder.png",
+                      blackColor,
+                    ),
                   ],
                 ),
               ],
