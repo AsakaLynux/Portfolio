@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio2/design/devices/desktop/desktop.dart';
+import 'package:portfolio2/design/devices/desktop/desktop_page.dart';
 import 'package:portfolio2/design/devices/mobile/home_page.dart';
 import './responsive_layout.dart';
 import '../../shared/theme.dart';
