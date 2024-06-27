@@ -16,65 +16,54 @@ class DesktopExperiencedPage extends StatefulWidget {
 }
 
 class _DesktopExperiencedPageState extends State<DesktopExperiencedPage> {
-  bool _isHover = false;
-
-  // void hover() {
-  //   if (kDebugMode) {
-  //     print(_isHover);
-  //   }
-  //   setState(() {
-  //     _isHover = _isHover ? false : true;
-  //     // if (_select == false) {
-  //     //   _select = true;
-  //     // } else {
-  //     //   _select = false;
-  //     // }
-  //   });
-  // }
-
+  bool _isHovered = false;
+  int _hoveredIndex = -1;
   @override
   Widget build(BuildContext context) {
-    Widget card(String text, String image) {
-      return InkWell(
-        onHover: (val) {
-          setState(() {
-            if (kDebugMode) {
-              print(_isHover);
-            }
-            _isHover = val;
-          });
-        },
-        child: Container(
-          width: 288,
-          height: 295,
-          margin: const EdgeInsets.only(left: 15, right: 15),
-          padding: const EdgeInsets.only(bottom: 35, left: 30),
-          decoration: BoxDecoration(
-            color: _isHover ? purpleColor : greyColor,
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: 50,
-                height: 50,
-                child: Image.asset(
-                  image,
-                  color: _isHover ? blackColor : whiteColor,
+    Widget card(int index, String text, String image) {
+      return GestureDetector(
+        child: MouseRegion(
+          onEnter: (event) {
+            setState(() {
+              _hoveredIndex = index;
+              if (kDebugMode) {
+                print(index);
+              }
+            });
+          },
+          // onEnter: (_) => setState(() => _hoveredIndex = index),
+          onExit: (_) => setState(() => _hoveredIndex = -1),
+          child: Container(
+            width: 288,
+            height: 295,
+            padding: const EdgeInsets.only(bottom: 35, left: 30),
+            decoration: BoxDecoration(
+              color: _hoveredIndex == index ? purpleColor : greyColor,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: 50,
+                  height: 50,
+                  child: Image.asset(
+                    image,
+                    color: _hoveredIndex == index ? blackColor : whiteColor,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 10),
-              Text(
-                text,
-                style: textStylePoppins.copyWith(
-                  fontSize: 20,
-                  fontWeight: bold,
-                  color: _isHover ? blackColor : whiteColor,
+                const SizedBox(height: 10),
+                Text(
+                  text,
+                  style: textStylePoppins.copyWith(
+                    fontSize: 20,
+                    fontWeight: bold,
+                    color: _hoveredIndex == index ? blackColor : whiteColor,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       );
@@ -114,6 +103,7 @@ class _DesktopExperiencedPageState extends State<DesktopExperiencedPage> {
             ),
           ),
           Container(
+            width: widget.width * (2 / 4),
             margin: EdgeInsets.zero,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -128,16 +118,20 @@ class _DesktopExperiencedPageState extends State<DesktopExperiencedPage> {
                 ),
                 const SizedBox(height: 20),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     card(
+                      0,
                       "Front End Developer",
                       "computer.png",
                     ),
                     card(
+                      1,
                       "UI/UX Designer",
                       "paint.png",
                     ),
                     card(
+                      2,
                       "Branding Designer",
                       "thunder.png",
                     ),
