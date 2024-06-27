@@ -16,7 +16,7 @@ class DesktopExperiencedPage extends StatefulWidget {
 }
 
 class _DesktopExperiencedPageState extends State<DesktopExperiencedPage> {
-  int _hoveredIndex = -1;
+  int hoveredIndex = -1;
   @override
   Widget build(BuildContext context) {
     Widget card(int index, String text, String image) {
@@ -24,20 +24,20 @@ class _DesktopExperiencedPageState extends State<DesktopExperiencedPage> {
         child: MouseRegion(
           onEnter: (event) {
             setState(() {
-              _hoveredIndex = index;
+              hoveredIndex = index;
               if (kDebugMode) {
                 print(index);
               }
             });
           },
           // onEnter: (_) => setState(() => _hoveredIndex = index),
-          onExit: (_) => setState(() => _hoveredIndex = -1),
+          onExit: (_) => setState(() => hoveredIndex = -1),
           child: Container(
             width: 288,
             height: 295,
             padding: const EdgeInsets.only(bottom: 35, left: 30),
             decoration: BoxDecoration(
-              color: _hoveredIndex == index ? purpleColor : greyColor,
+              color: hoveredIndex == index ? purpleColor : greyColor,
               borderRadius: BorderRadius.circular(20),
             ),
             child: Column(
@@ -49,7 +49,7 @@ class _DesktopExperiencedPageState extends State<DesktopExperiencedPage> {
                   height: 50,
                   child: Image.asset(
                     image,
-                    color: _hoveredIndex == index ? blackColor : whiteColor,
+                    color: hoveredIndex == index ? blackColor : whiteColor,
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -58,7 +58,7 @@ class _DesktopExperiencedPageState extends State<DesktopExperiencedPage> {
                   style: textStylePoppins.copyWith(
                     fontSize: 20,
                     fontWeight: bold,
-                    color: _hoveredIndex == index ? blackColor : whiteColor,
+                    color: hoveredIndex == index ? blackColor : whiteColor,
                   ),
                 ),
               ],
