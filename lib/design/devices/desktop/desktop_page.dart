@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio2/design/devices/desktop/desktop_experienced_page.dart';
+import 'package:portfolio2/design/devices/desktop/desktop_footer_page.dart';
 import 'package:portfolio2/design/devices/desktop/desktop_home_page.dart';
 import 'package:portfolio2/design/devices/desktop/desktop_logo_page.dart';
 
@@ -16,6 +17,7 @@ class DesktopPage extends StatelessWidget {
         DesktopHomePage(width: width, height: height),
         DesktopLogoPage(width: width, height: height),
         DesktopExperiencedPage(width: width, height: height),
+        DesktopFooterPage(width: width, height: height),
       ],
     );
   }
