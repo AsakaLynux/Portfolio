@@ -16,7 +16,6 @@ class DesktopExperiencedPage extends StatefulWidget {
 }
 
 class _DesktopExperiencedPageState extends State<DesktopExperiencedPage> {
-  bool _isHovered = false;
   int _hoveredIndex = -1;
   @override
   Widget build(BuildContext context) {
