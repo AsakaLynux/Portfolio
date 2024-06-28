@@ -1,3 +1,4 @@
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,7 @@ class DesktopHomePage extends StatelessWidget {
     ByteData data = await rootBundle.load('cv.pdf');
     final blob = html.Blob([data.buffer.asUint8List()]);
     final url = html.Url.createObjectUrlFromBlob(blob);
+    // ignore: unused_local_variable
     final anchor = html.AnchorElement(href: url)
       ..setAttribute("download", "cv.pdf")
       ..click();
