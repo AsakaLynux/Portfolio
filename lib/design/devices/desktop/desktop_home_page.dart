@@ -1,5 +1,7 @@
+import 'dart:html' as html;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:portfolio2/design/widget/button_widget.dart';
 import 'package:portfolio2/shared/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -18,6 +20,16 @@ class DesktopHomePage extends StatelessWidget {
         print('Could not launch $emailUrl');
       }
     }
+  }
+
+  Future<void> _downloadFile() async {
+    ByteData data = await rootBundle.load('cv.pdf');
+    final blob = html.Blob([data.buffer.asUint8List()]);
+    final url = html.Url.createObjectUrlFromBlob(blob);
+    final anchor = html.AnchorElement(href: url)
+      ..setAttribute("download", "cv.pdf")
+      ..click();
+    html.Url.revokeObjectUrl(url);
   }
 
   @override
@@ -106,6 +118,7 @@ class DesktopHomePage extends StatelessWidget {
                           width: 200,
                           radius: 10,
                           onPressed: () {
+                            _downloadFile();
                             if (kDebugMode) {
                               print("Pressed");
                             }
