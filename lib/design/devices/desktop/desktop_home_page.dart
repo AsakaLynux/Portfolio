@@ -2,11 +2,23 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio2/design/widget/button_widget.dart';
 import 'package:portfolio2/shared/theme.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DesktopHomePage extends StatelessWidget {
   final double height;
   final double width;
   const DesktopHomePage({super.key, required this.height, required this.width});
+
+  void _launchEmail(String email) async {
+    final Uri emailUrl = Uri(scheme: 'mailto', path: email);
+    if (await canLaunchUrl(emailUrl)) {
+      await launchUrl(emailUrl);
+    } else {
+      if (kDebugMode) {
+        print('Could not launch $emailUrl');
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,6 +84,7 @@ class DesktopHomePage extends StatelessWidget {
                           width: 200,
                           color: blueColor,
                           onPressed: () {
+                            _launchEmail("muhammad.irfansyah26647@gmail.com");
                             if (kDebugMode) {
                               print("Pressed");
                             }
