@@ -89,9 +89,9 @@ class _DesktopFooterPageState extends State<DesktopFooterPage> {
                       children: [
                         socialIcon("linkedin.png",
                             "https://www.linkedin.com/in/muhammad-irfansyah-955363200/"),
-                        const SizedBox(width: 20),
-                        socialIcon(
-                            "github.png", "https://github.com/AsakaLynux"),
+                        // const SizedBox(width: 20),
+                        // socialIcon(
+                        //     "github.png", "https://github.com/AsakaLynux"),
                       ],
                     ),
                   ),
@@ -119,13 +119,36 @@ class _DesktopFooterPageState extends State<DesktopFooterPage> {
                       style: textStylePoppins.copyWith(
                         fontSize: 30,
                         color: isHovered ? blueColor : whiteColor,
-                        decoration: TextDecoration.underline,
                       ),
                     ),
                   ),
+                  // RichText(text: TextSpan(
+                  //   text: "My Project on ",
+                  //   style: whiteTextStylePoppins.copyWith(fontSize: 30),
+                  //   children: [
+                  //     TextSpan(
+                  //       text: "Github",
+                  //       onEnter: (event) {
+
+                  //       },
+                  //     )
+                  //   ]
+                  // ))
                   Text(
-                    "My Project:",
+                    "My Project on Github (My laptop Rigth now can't debug the project )",
                     style: whiteTextStylePoppins.copyWith(fontSize: 30),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      _launchUrl("https://github.com/AsakaLynux");
+                    },
+                    child: Text(
+                      "Github",
+                      style: textStylePoppins.copyWith(
+                        fontSize: 30,
+                        color: whiteColor,
+                      ),
+                    ),
                   ),
                 ],
               ),
