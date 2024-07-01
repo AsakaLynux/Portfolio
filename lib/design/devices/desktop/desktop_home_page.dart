@@ -57,7 +57,7 @@ class DesktopHomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Hello!\nI’m Zarror Nibors",
+                    "Hello!\nI’m Muhammad Irfansyah",
                     style: whiteTextStylePlayFairDisplay.copyWith(
                       fontWeight: bold,
                       fontSize: 100,
@@ -69,11 +69,11 @@ class DesktopHomePage extends StatelessWidget {
                     width: 404,
                     child: RichText(
                       text: TextSpan(
-                        text: "I’am freelance ",
+                        text: "I’am fresh gradate ",
                         style: greyTextStylePoppins.copyWith(fontSize: 20),
                         children: [
                           TextSpan(
-                            text: "web developer",
+                            text: "Computer Science",
                             style: whiteTextStylePoppins.copyWith(
                               fontSize: 20,
                               fontWeight: bold,
@@ -81,7 +81,7 @@ class DesktopHomePage extends StatelessWidget {
                           ),
                           TextSpan(
                             text:
-                                " based in Indonesia who loves to craft attractive design experiences for the web.",
+                                " based in Indonesia who loves to craft attractive design experiences for the web and mobile.",
                             style: greyTextStylePoppins.copyWith(fontSize: 20),
                           ),
                         ],
@@ -152,8 +152,11 @@ class DesktopHomePage extends StatelessWidget {
             height: height,
             margin: EdgeInsets.zero,
             decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("image.png"), fit: BoxFit.fill)),
+              image: DecorationImage(
+                image: AssetImage("photo.jpg"),
+                fit: BoxFit.cover,
+              ),
+            ),
             // child: Icon(
             //   Icons.person,
             //   size: width / 2,
