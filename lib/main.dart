@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio2/design/devices/desktop/desktop_page.dart';
-import 'package:portfolio2/design/devices/mobile/home_page.dart';
 import './responsive_layout.dart';
 import '../../shared/theme.dart';
+import 'design/devices/desktop/desktop_page.dart';
+import 'design/devices/mobile/home_page.dart';
 
 void main() {
   runApp(const MyApp());

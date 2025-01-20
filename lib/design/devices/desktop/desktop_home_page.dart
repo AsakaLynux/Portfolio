@@ -3,9 +3,10 @@ import 'dart:html' as html;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:portfolio2/design/widget/button_widget.dart';
-import 'package:portfolio2/shared/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../../../shared/theme.dart';
+import '../../widget/button_widget.dart';
 
 class DesktopHomePage extends StatelessWidget {
   final double height;
@@ -146,22 +147,6 @@ class DesktopHomePage extends StatelessWidget {
                 ],
               ),
             ),
-          ),
-          Container(
-            width: width / 2,
-            height: height,
-            margin: EdgeInsets.zero,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("photo.jpg"),
-                fit: BoxFit.cover,
-              ),
-            ),
-            // child: Icon(
-            //   Icons.person,
-            //   size: width / 2,
-            //   color: whiteColor,
-            // ),
           ),
         ],
       ),

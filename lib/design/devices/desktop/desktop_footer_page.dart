@@ -1,7 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio2/shared/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../../../shared/theme.dart';
 
 class DesktopFooterPage extends StatefulWidget {
   final double height;

@@ -1,6 +1,6 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio2/shared/theme.dart';
+
+import '../../../shared/theme.dart';
 
 class DesktopExperiencedPage extends StatefulWidget {
   final double height;
@@ -25,9 +25,6 @@ class _DesktopExperiencedPageState extends State<DesktopExperiencedPage> {
           onEnter: (event) {
             setState(() {
               hoveredIndex = index;
-              if (kDebugMode) {
-                print(index);
-              }
             });
           },
           // onEnter: (_) => setState(() => _hoveredIndex = index),
