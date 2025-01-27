@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -18,28 +17,9 @@ class DesktopFooterPage extends StatefulWidget {
 }
 
 class _DesktopFooterPageState extends State<DesktopFooterPage> {
-  String email = "muhammad.irfansyah26647@gmail.com";
-  bool isHovered = false;
-  void _launchEmail(String email) async {
-    final Uri emailUrl = Uri(scheme: 'mailto', path: email);
-    if (await canLaunchUrl(emailUrl)) {
-      await launchUrl(emailUrl);
-    } else {
-      if (kDebugMode) {
-        print('Could not launch $emailUrl');
-      }
-    }
-  }
-
   void _launchUrl(String webUrl) async {
     final Uri url = Uri.parse(webUrl);
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url);
-    } else {
-      if (kDebugMode) {
-        print("Could not launch $url");
-      }
-    }
+    if (await canLaunchUrl(url)) await launchUrl(url);
   }
 
   @override
@@ -48,8 +28,8 @@ class _DesktopFooterPageState extends State<DesktopFooterPage> {
       return InkWell(
         onTap: () => _launchUrl(webUrl),
         child: SizedBox(
-          width: 25,
-          height: 25,
+          width: 50,
+          height: 50,
           child: Image.asset(
             image,
             color: whiteColor,
@@ -60,118 +40,35 @@ class _DesktopFooterPageState extends State<DesktopFooterPage> {
 
     return Container(
       width: widget.width,
-      height: widget.height * (2 / 4),
+      height: widget.height / 3,
       margin: EdgeInsets.zero,
       padding: const EdgeInsets.symmetric(
         horizontal: 125,
         vertical: 50,
       ),
-      decoration: BoxDecoration(color: blackColor),
+      color: blackColor,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          Text(
+            "Let’s Connect",
+            style: whiteTextStylePoppins.copyWith(
+              fontSize: 100,
+              fontWeight: bold,
+              height: 1,
+            ),
+          ),
+          const SizedBox(height: 20),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Column(
-                children: [
-                  Text(
-                    "Let’s\nConnect",
-                    style: whiteTextStylePoppins.copyWith(
-                      fontSize: 100,
-                      fontWeight: bold,
-                      height: 1,
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  SizedBox(
-                    child: Row(
-                      // mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        socialIcon("linkedin.png",
-                            "https://www.linkedin.com/in/muhammad-irfansyah-955363200/"),
-                        // const SizedBox(width: 20),
-                        // socialIcon(
-                        //     "github.png", "https://github.com/AsakaLynux"),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text(
-                    "Muhammad Irfansyah",
-                    style: whiteTextStylePoppins.copyWith(fontSize: 30),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      _launchEmail(email);
-                    },
-                    onHover: (value) {
-                      setState(() {
-                        isHovered = value;
-                      });
-                    },
-                    child: Text(
-                      email,
-                      style: textStylePoppins.copyWith(
-                        fontSize: 30,
-                        color: isHovered ? blueColor : whiteColor,
-                      ),
-                    ),
-                  ),
-                  // RichText(text: TextSpan(
-                  //   text: "My Project on ",
-                  //   style: whiteTextStylePoppins.copyWith(fontSize: 30),
-                  //   children: [
-                  //     TextSpan(
-                  //       text: "Github",
-                  //       onEnter: (event) {
-
-                  //       },
-                  //     )
-                  //   ]
-                  // ))
-                  Text(
-                    "My Project on Github (My laptop Rigth now can't debug the project )",
-                    style: whiteTextStylePoppins.copyWith(fontSize: 30),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      _launchUrl("https://github.com/AsakaLynux");
-                    },
-                    child: Text(
-                      "Github",
-                      style: textStylePoppins.copyWith(
-                        fontSize: 30,
-                        color: whiteColor,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              socialIcon("linkedin.png",
+                  "https://www.linkedin.com/in/muhammad-irfansyah-955363200/"),
+              const SizedBox(width: 20),
+              socialIcon("github.png", "https://github.com/AsakaLynux"),
             ],
           ),
-          RichText(
-            text: TextSpan(
-                text: "Created by ",
-                style: greyTextStylePoppins.copyWith(fontSize: 20),
-                children: [
-                  TextSpan(
-                    text: "Muhammad Irfansyah",
-                    style: whiteTextStylePoppins.copyWith(
-                      fontSize: 20,
-                      fontWeight: bold,
-                    ),
-                  ),
-                  TextSpan(
-                      text: " | All Reserved!",
-                      style: greyTextStylePoppins.copyWith(fontSize: 20)),
-                ]),
-          ),
+          //
         ],
       ),
     );
