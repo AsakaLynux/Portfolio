@@ -82,14 +82,14 @@ class _DesktopExperiencedPageState extends State<DesktopExperiencedPage> {
             child: Column(
               children: [
                 Text(
-                  "4+",
+                  "1+",
                   style: purpleTextStylePlayFairDisplay.copyWith(
                     fontSize: 100,
                     fontWeight: bold,
                   ),
                 ),
                 Text(
-                  "Years Experience Working",
+                  "Years Experience",
                   style: whiteTextStylePlayFairDisplay.copyWith(
                     fontSize: 40,
                     fontWeight: bold,
@@ -105,7 +105,7 @@ class _DesktopExperiencedPageState extends State<DesktopExperiencedPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Developer and Designer, specialized in\nUI/UX and Web Developer",
+                  "Developer and System Analyst, specialized in\nMobile Developer and Web Developer",
                   style: whiteTextStylePoppins.copyWith(
                     fontSize: 40,
                     fontWeight: bold,
@@ -119,17 +119,17 @@ class _DesktopExperiencedPageState extends State<DesktopExperiencedPage> {
                     card(
                       0,
                       "Front End Developer",
-                      "computer.png",
+                      "web.png",
                     ),
                     card(
                       1,
-                      "UI/UX Designer",
-                      "paint.png",
+                      "Mobile Developer",
+                      "mobile.png",
                     ),
                     card(
                       2,
-                      "Branding Designer",
-                      "thunder.png",
+                      "System Analyst",
+                      "computer.png",
                     ),
                   ],
                 ),
