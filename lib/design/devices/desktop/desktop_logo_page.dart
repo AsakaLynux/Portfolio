@@ -12,10 +12,10 @@ class DesktopLogoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> skillIcon = [
-      "figma.png",
-      "react.png",
-      "sass.png",
-      "css.png",
+      "flutter.png",
+      "java.png",
+      "query.png",
+      "laravel.png",
       "html.png",
     ];
     return Container(
