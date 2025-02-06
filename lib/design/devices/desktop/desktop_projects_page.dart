@@ -31,7 +31,7 @@ class DesktopProjectsPage extends StatelessWidget {
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3),
               // scrollDirection: Axis.horizontal,
-              itemCount: 20,
+              itemCount: projectLists.length,
               itemBuilder: (context, index) {
                 return Container(
                   margin: const EdgeInsets.only(right: 20, bottom: 20),
@@ -39,9 +39,22 @@ class DesktopProjectsPage extends StatelessWidget {
                     color: Colors.transparent,
                     // margin: const EdgeInsets.symmetric(horizontal: 200),
                     child: Center(
-                      child: Text(
-                        "projectLists $index",
-                        style: whiteTextStylePoppins,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          projectLists[index].image.isNotEmpty
+                              ? Image.asset(
+                                  projectLists[index].image,
+                                  width: 100,
+                                  height: 100,
+                                )
+                              : const SizedBox(),
+                          const SizedBox(height: 20),
+                          Text(
+                            projectLists[index].name,
+                            style: whiteTextStylePoppins,
+                          ),
+                        ],
                       ),
                     ),
                   ),

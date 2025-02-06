@@ -25,7 +25,7 @@ class DesktopHomePage extends StatelessWidget {
   }
 
   Future<void> _downloadFile() async {
-    ByteData data = await rootBundle.load('cv.pdf');
+    ByteData data = await rootBundle.load('CV.pdf');
     final blob = html.Blob([data.buffer.asUint8List()]);
     final url = html.Url.createObjectUrlFromBlob(blob);
     // ignore: unused_local_variable
