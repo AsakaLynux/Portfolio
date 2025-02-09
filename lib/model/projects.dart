@@ -53,4 +53,16 @@ List<Projects> projectLists = [
     url: "https://github.com/AsakaLynux/LAB-ComGraph",
     image: "projects/three-js-icon.png",
   ),
+  Projects(
+    id: 4,
+    name: "Me Time Application",
+    description:
+        "This project is simple application to give recommendation base on input user like duration (1 hour, 30 minutes, 1 hour 30 minutes. etc), location (At home, online, anywhere), and person (1 person, 2 persons, 3 persons, etc)",
+    technologies: [
+      "Flutter: 3.27.1",
+      "Java version: 7.0.12",
+    ],
+    url: "https://github.com/AsakaLynux/me_time",
+    image: "projects/metime_logo.png",
+  )
 ];

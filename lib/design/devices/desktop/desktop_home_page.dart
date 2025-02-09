@@ -28,9 +28,9 @@ class DesktopHomePage extends StatelessWidget {
     ByteData data = await rootBundle.load('CV.pdf');
     final blob = html.Blob([data.buffer.asUint8List()]);
     final url = html.Url.createObjectUrlFromBlob(blob);
-    // ignore: unused_local_variable
-    final anchor = html.AnchorElement(href: url)
-      ..setAttribute("download", "cv.pdf")
+
+    html.AnchorElement(href: url)
+      ..setAttribute("download", "CV - Muhammad Irfansyah.pdf")
       ..click();
     html.Url.revokeObjectUrl(url);
   }
@@ -68,7 +68,7 @@ class DesktopHomePage extends StatelessWidget {
                 width: 404,
                 child: RichText(
                   text: TextSpan(
-                    text: "I’am fresh gradate ",
+                    text: "I'm fresh gradate ",
                     style: greyTextStylePoppins.copyWith(fontSize: 20),
                     children: [
                       TextSpan(
@@ -121,7 +121,7 @@ class DesktopHomePage extends StatelessWidget {
                       onPressed: () {
                         _downloadFile();
                         if (kDebugMode) {
-                          print("Pressed");
+                          print("Download file");
                         }
                       },
                       contain: [
