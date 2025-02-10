@@ -3,13 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../model/projects.dart';
+import '../../../shared/dimensions.dart';
 import '../../../shared/theme.dart';
 
 class DesktopProjectsPage extends StatelessWidget {
-  final double height;
-  final double width;
-  const DesktopProjectsPage(
-      {super.key, required this.height, required this.width});
+  const DesktopProjectsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +17,8 @@ class DesktopProjectsPage extends StatelessWidget {
     }
 
     return Container(
-      width: width,
-      height: height,
+      width: screenWidth,
+      height: screenHeight,
       padding: const EdgeInsets.symmetric(horizontal: 50),
       color: backgroundColor,
       child: Column(
@@ -32,8 +30,8 @@ class DesktopProjectsPage extends StatelessWidget {
                 whiteTextStylePoppins.copyWith(fontSize: 24, fontWeight: bold),
           ),
           SizedBox(
-            width: width / 2,
-            height: height - (height / 4),
+            width: screenWidth / 2,
+            height: screenHeight - (screenHeight / 4),
             child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3),

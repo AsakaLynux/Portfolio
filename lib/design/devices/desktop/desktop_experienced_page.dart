@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../../../shared/dimensions.dart';
 import '../../../shared/theme.dart';
 
 class DesktopExperiencedPage extends StatefulWidget {
-  final double height;
-  final double width;
-  const DesktopExperiencedPage({
-    super.key,
-    required this.height,
-    required this.width,
-  });
+  const DesktopExperiencedPage({super.key});
 
   @override
   State<DesktopExperiencedPage> createState() => _DesktopExperiencedPageState();
@@ -66,8 +61,8 @@ class _DesktopExperiencedPageState extends State<DesktopExperiencedPage> {
     }
 
     return Container(
-      width: widget.width,
-      height: widget.height / 2,
+      width: screenWidth,
+      height: screenHeight / 2,
       margin: EdgeInsets.zero,
       decoration: BoxDecoration(
         color: backgroundColor,
@@ -99,7 +94,7 @@ class _DesktopExperiencedPageState extends State<DesktopExperiencedPage> {
             ),
           ),
           Container(
-            width: widget.width * (2 / 4),
+            width: screenWidth * (2 / 4),
             margin: EdgeInsets.zero,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

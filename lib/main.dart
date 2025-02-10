@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import './responsive_layout.dart';
 import '../../shared/theme.dart';
 import 'design/devices/desktop/desktop_page.dart';
-import 'design/devices/mobile/home_page.dart';
+import 'design/devices/mobile/mobile_home_page.dart';
+import 'shared/dimensions.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,8 +13,6 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
-
     return MaterialApp(
       title: 'Portfolio',
       theme: ThemeData(
@@ -31,7 +30,7 @@ class MyApp extends StatelessWidget {
             Align(
               alignment: Alignment.topRight,
               child: Text(
-                "${screenSize.width} x ${screenSize.height}",
+                "$screenWidth x $screenHeight",
                 style: const TextStyle(color: Colors.green),
               ),
             ),
