@@ -11,14 +11,18 @@ class DesktopPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: const [
-        DesktopHomePage(),
-        DesktopLogoPage(),
-        DesktopExperiencedPage(),
-        DesktopProjectsPage(),
-        DesktopFooterPage(),
-      ],
+    var width = MediaQuery.sizeOf(context).width;
+    var height = MediaQuery.sizeOf(context).height;
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          DesktopHomePage(width: width, height: height),
+          DesktopLogoPage(width: width, height: height),
+          DesktopExperiencedPage(width: width, height: height),
+          DesktopProjectsPage(width: width, height: height),
+          DesktopFooterPage(width: width, height: height),
+        ],
+      ),
     );
   }
 }

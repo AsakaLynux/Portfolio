@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../../../shared/dimensions.dart';
-
 class DesktopLogoPage extends StatelessWidget {
-  const DesktopLogoPage({super.key});
+  final double height;
+  final double width;
+  const DesktopLogoPage({
+    super.key,
+    required this.height,
+    required this.width,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +19,8 @@ class DesktopLogoPage extends StatelessWidget {
       "html.png",
     ];
     return Container(
-      width: screenWidth,
-      height: screenHeight / 4,
+      width: width,
+      height: height / 4,
       margin: EdgeInsets.zero,
       padding: EdgeInsets.zero,
       decoration: const BoxDecoration(

@@ -3,14 +3,15 @@ import 'dart:html' as html;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:portfolio2/shared/dimensions.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../shared/theme.dart';
 import '../../widget/button_widget.dart';
 
 class DesktopHomePage extends StatelessWidget {
-  const DesktopHomePage({super.key});
+  final double height;
+  final double width;
+  const DesktopHomePage({super.key, required this.height, required this.width});
 
   void _launchEmail(String email) async {
     final Uri emailUrl = Uri(scheme: 'mailto', path: email);
@@ -37,13 +38,13 @@ class DesktopHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: screenWidth,
-      height: screenHeight,
+      width: width,
+      height: height,
       margin: EdgeInsets.zero,
       padding: EdgeInsets.zero,
       child: Container(
         // width: width / 2,
-        height: screenHeight,
+        height: height,
         margin: EdgeInsets.zero,
         decoration: BoxDecoration(
           color: backgroundColor,
@@ -88,7 +89,7 @@ class DesktopHomePage extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               SizedBox(
-                width: screenWidth / 4,
+                width: width / 4,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [

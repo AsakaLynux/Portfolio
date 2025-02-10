@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../shared/dimensions.dart';
 import '../../../shared/theme.dart';
 
 class DesktopFooterPage extends StatefulWidget {
-  const DesktopFooterPage({super.key});
+  final double height;
+  final double width;
+  const DesktopFooterPage({
+    super.key,
+    required this.height,
+    required this.width,
+  });
 
   @override
   State<DesktopFooterPage> createState() => _DesktopFooterPageState();
@@ -34,8 +39,8 @@ class _DesktopFooterPageState extends State<DesktopFooterPage> {
     }
 
     return Container(
-      width: screenWidth,
-      height: screenHeight / 3,
+      width: widget.width,
+      height: widget.height / 3,
       margin: EdgeInsets.zero,
       padding: const EdgeInsets.symmetric(
         horizontal: 125,
