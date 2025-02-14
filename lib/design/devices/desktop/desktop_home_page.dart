@@ -11,9 +11,13 @@ import '../../widget/button_widget.dart';
 class DesktopHomePage extends StatelessWidget {
   final double height;
   final double width;
-  const DesktopHomePage({super.key, required this.height, required this.width});
+  const DesktopHomePage({
+    super.key,
+    required this.height,
+    required this.width,
+  });
 
-  void _launchEmail(String email) async {
+  void launchEmail(String email) async {
     final Uri emailUrl = Uri(scheme: 'mailto', path: email);
     if (await canLaunchUrl(emailUrl)) {
       await launchUrl(emailUrl);
@@ -24,7 +28,7 @@ class DesktopHomePage extends StatelessWidget {
     }
   }
 
-  Future<void> _downloadFile() async {
+  Future<void> downloadFile() async {
     ByteData data = await rootBundle.load('CV.pdf');
     final blob = html.Blob([data.buffer.asUint8List()]);
     final url = html.Url.createObjectUrlFromBlob(blob);
@@ -59,7 +63,7 @@ class DesktopHomePage extends StatelessWidget {
                 "Hello!\nI’m Muhammad Irfansyah",
                 style: whiteTextStylePlayFairDisplay.copyWith(
                   fontWeight: bold,
-                  fontSize: 100,
+                  fontSize: width * 0.05,
                   height: 1,
                 ),
               ),
@@ -97,9 +101,9 @@ class DesktopHomePage extends StatelessWidget {
                       width: 200,
                       color: blueColor,
                       onPressed: () {
-                        _launchEmail("muhammad.irfansyah26647@gmail.com");
+                        launchEmail("muhammad.irfansyah26647@gmail.com");
                         if (kDebugMode) {
-                          print("Pressed");
+                          print("Email Pressed");
                         }
                       },
                       contain: [
@@ -117,9 +121,8 @@ class DesktopHomePage extends StatelessWidget {
                     ),
                     ButtonWidget(
                       width: 200,
-                      radius: 10,
                       onPressed: () {
-                        _downloadFile();
+                        downloadFile();
                         if (kDebugMode) {
                           print("Download file");
                         }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import './responsive_layout.dart';
 import '../../shared/theme.dart';
 import 'design/devices/desktop/desktop_page.dart';
-import 'design/devices/mobile/mobile_home_page.dart';
+import 'design/devices/mobile/mobile_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           children: [
             const ResponsiveLayout(
               desktopBody: DesktopPage(),
-              mobileBody: MobileHomePage(),
+              mobileBody: MobilePage(),
             ),
             Align(
               alignment: Alignment.topRight,

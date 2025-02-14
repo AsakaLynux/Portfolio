@@ -64,5 +64,17 @@ List<Projects> projectLists = [
     ],
     url: "https://github.com/AsakaLynux/me_time",
     image: "projects/metime_logo.png",
+  ),
+  Projects(
+    id: 5,
+    name: "DnD Map",
+    description:
+        "This project is simple map project for support DnD with friends, this is a map that player can use to explore the story, player can drag the player token and move to targer area to move to another map.",
+    technologies: [
+      "Flutter: 3.27.1",
+      "Java version: 7.0.12",
+    ],
+    url: "https://github.com/AsakaLynux/dndMap",
+    image: "projects/dnd.png",
   )
 ];
